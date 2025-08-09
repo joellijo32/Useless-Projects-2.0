@@ -5,35 +5,33 @@
 
 
 ## Basic Details
-### Team Name: [Name]
+### Team Name: VoidWare
 
 
 ### Team Members
-- Team Lead: [Name] - [College]
-- Member 2: [Name] - [College]
-- Member 3: [Name] - [College]
+- Team Lead: Naveen S - College of Engineering, Trivandrum
+- Member 2: Naveen S - College of Engineering, Trivandrum
 
 ### Project Description
-[2-3 lines about what your project does]
+People often wonder about the calories in food… but what about the things we should NEVER eat?
+WhyChewThis calculates the “calories” of absurd items—like bricks, socks, USB drives—in the most ridiculous way possible, so you never accidentally snack on a keyboard again.
 
 ### The Problem (that doesn't exist)
-[What ridiculous problem are you solving?]
+“What if I accidentally eat my homework? How many calories are in that?”
+Nobody asked for this, but somewhere in the universe, a confused goat probably wants to know.
 
 ### The Solution (that nobody asked for)
-[How are you solving it? Keep it fun!]
+We built scientific(okay, slightly random) calorie calculator for inedible objects.
+Just input the object name, and boom—you get an utterly meaningless calorie count, plus a sarcastic diet plan.
+
 
 ## Technical Details
 ### Technologies/Components Used
 For Software:
-- [Languages used]
-- [Frameworks used]
-- [Libraries used]
-- [Tools used]
-
-For Hardware:
-- [List main components]
-- [List specifications]
-- [List tools required]
+- JavaScript, React
+- Vite+React, node+express 
+- SQLite3, Tailwind CSS, Cors, React Router DOM, React icons
+- VSCode, Google colab, Vercel, Render
 
 ### Implementation
 For Software:
@@ -88,10 +86,8 @@ For Hardware:
 [Add any extra demo materials/links]
 
 ## Team Contributions
-- [Name 1]: [Specific contributions]
-- [Name 2]: [Specific contributions]
-- [Name 3]: [Specific contributions]
-
+- Joel Lijo: Design, Deployment 
+- Naveen S: Idea formation, Database, Documentation
 ---
 Made with ❤️ at TinkerHub Useless Projects 
 

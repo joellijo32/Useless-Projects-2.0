@@ -12,7 +12,7 @@ https://why-chew-this-useless-pro-git-87446c-joel-lijo-mathews-projects.vercel.a
 
 ### Team Members
 - Team Lead: Naveen S - College of Engineering, Trivandrum
-- Member 2: Naveen S - College of Engineering, Trivandrum
+- Member 2: Joel Lijo Mathew- College of Engineering, Trivandrum
 
 ### Project Description
 People often wonder about the calories in food… but what about the things we should NEVER eat?

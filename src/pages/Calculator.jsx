@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react'
+import { apiFetch } from '../utils/api'
 import { Link } from 'react-router-dom'
 import { inedibleItems as localItems } from '../data/inedibleItems'
 
@@ -28,7 +29,7 @@ const Calculator = () => {
       setLoading(true)
       setError('')
       try {
-        const res = await fetch('/api/items')
+  const res = await apiFetch('/api/items')
         if (!res.ok) throw new Error(`HTTP ${res.status}`)
         const data = await res.json()
         if (!cancelled && Array.isArray(data) && data.length) {

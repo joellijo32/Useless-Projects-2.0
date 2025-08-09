@@ -1,4 +1,5 @@
 import { inedibleItems as localFallbackItems } from '../data/inedibleItems'
+import { apiFetch } from './api'
 
 // Weighted random sampling without replacement
 function weightedSample(items, weights, k) {
@@ -40,7 +41,7 @@ export const generateDietPlan = async (formData) => {
   // Get items from backend; fallback to local list on failure
   let items = []
   try {
-    const res = await fetch('/api/items')
+  const res = await apiFetch('/api/items')
     if (res.ok) {
       const data = await res.json()
       if (Array.isArray(data)) items = data

@@ -54,17 +54,21 @@ For Software:
 For Software:
 
 # Screenshots (Add at least 3)
-<img src="C:\Users\Naveen S\OneDrive\Pictures\Screenshots\Screenshot 2025-08-09 161335.png">
 
-<img src="C:\Users\Naveen S\OneDrive\Pictures\Screenshots\Screenshot 2025-08-09 161401.png">
+<img width="1901" height="909" alt="Screenshot 2025-08-09 161335" src="https://github.com/user-attachments/assets/1544d5bc-1f2e-40fb-8928-0bdf27294270" />
+<img width="1889" height="915" alt="Screenshot 2025-08-09 161401" src="https://github.com/user-attachments/assets/612a32b8-860f-4dbd-a7f8-893069e9a739" />
+
+
 
 Screenshots of home page
 
-<img src="C:\Users\Naveen S\OneDrive\Pictures\Screenshots\Screenshot 2025-08-09 161434.png">
+<img width="1892" height="917" alt="Screenshot 2025-08-09 161434" src="https://github.com/user-attachments/assets/14af13c5-6c78-4ab0-adb5-2d520469f898" />
+
 
 Calorie calculator webpage
 
-<img src="C:\Users\Naveen S\OneDrive\Pictures\Screenshots\Screenshot 2025-08-09 161458.png">
+<img width="1889" height="901" alt="Screenshot 2025-08-09 161458" src="https://github.com/user-attachments/assets/76dd46b6-2ba1-4482-b013-3f9dea4597f2" />
+
 
 Diet planner webpage
 

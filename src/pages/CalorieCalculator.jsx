@@ -41,7 +41,7 @@ const CalorieCalculator = () => {
                 className={`item-card ${selectedItem?.id === item.id ? 'selected' : ''}`}
                 onClick={() => setSelectedItem(item)}
               >
-                <div className="item-emoji">{item.emoji}</div>
+               
                 <div className="item-name">{item.name}</div>
                 <div className="item-category">{item.category}</div>
                 <div className="item-calories">{item.caloriesPerUnit} cal</div>
@@ -56,7 +56,7 @@ const CalorieCalculator = () => {
           {selectedItem && (
             <>
               <div className="selected-item">
-                <span className="selected-emoji">{selectedItem.emoji}</span>
+                
                 <span className="selected-name">{selectedItem.name}</span>
               </div>
 

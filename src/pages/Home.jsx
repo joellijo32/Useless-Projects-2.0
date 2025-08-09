@@ -6,13 +6,13 @@ const Home = () => {
     <div className="home-page">
       <div className="hero-section glass-card">
         <h1 className="hero-title">
-          NutriTrack Pro
+          WhyChewThis
         </h1>
         <p className="hero-subtitle">
-          Advanced Nutritional Analysis & Diet Planning Platform
+          Advanced Calorie Calculator & Diet Planning Platform
         </p>
         <p className="hero-description">
-          Discover comprehensive nutritional information and create personalized diet plans 
+          Discover comprehensive calorie and create personalized diet plans 
           with our cutting-edge analysis technology.
         </p>
       </div>

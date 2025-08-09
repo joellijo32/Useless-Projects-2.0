@@ -5,7 +5,7 @@ const Header = () => {
     <div className="glass-card animate-float">
       <div>
         <h1>
-          🖊️ InediCalc Pro™ 📱
+          WhyChewThis
         </h1>
         <p className="text-xl text-gray-300 mb-2">
           The World's First Professional Calorie Calculator for Inedible Objects

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { inedibleItems as localItems } from '../data/inedibleItems'
 
@@ -10,6 +10,7 @@ const Calculator = () => {
   const [items, setItems] = useState(localItems)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
+  const [query, setQuery] = useState('')
 
   // Format calories to 2–3 decimal places with grouping
   const formatCal = (value) => {
@@ -77,6 +78,28 @@ const Calculator = () => {
 
   const billTotal = billItems.reduce((sum, i) => sum + i.caloriesPerUnit * i.quantity, 0)
 
+  const filteredItems = useMemo(() => {
+    const q = query.trim().toLowerCase()
+    if (!q) return items
+    return items.filter((it) =>
+      String(it.name || '').toLowerCase().includes(q) ||
+      String(it.category || '').toLowerCase().includes(q) ||
+      String(it.emoji || '').toLowerCase().includes(q)
+    )
+  }, [items, query])
+
+  // Detect edible searches and block with an error message
+  const isEdibleSearch = useMemo(() => {
+    const q = query.trim().toLowerCase()
+    if (!q) return false
+    const EDIBLE_KEYWORDS = [
+      'apple','banana','orange','grape','mango','rice','bread','milk','egg','eggs','chicken','fish','meat','beef','pork','mutton','vegetable','vegetables','veggie','fruit','fruits','pizza','burger','sandwich','pasta','noodle','noodles','soup','curry','dal','lentil','chapati','roti','dosa','idli','upma','sambar','cake','biscuit','cookie','chocolate','ice cream','juice','tea','coffee','water','soda','cola','pepsi'
+    ]
+    return EDIBLE_KEYWORDS.some(k => q.includes(k))
+  }, [query])
+
+  const displayItems = isEdibleSearch ? [] : filteredItems
+
   return (
     <div className="calculator-page">
       <div className="page-header">
@@ -92,16 +115,34 @@ const Calculator = () => {
           <div className="calculator-grid">
             <div className="item-selection-panel">
               <h2>Select Item</h2>
+              <div className="search-row">
+                <input
+                  type="text"
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
+                  placeholder="Search items (name, category)"
+                  className="form-input search-input"
+                  aria-label="Search items"
+                />
+              </div>
               {loading && <p className="muted">Loading items…</p>}
               {!loading && error && <p className="muted">{error}</p>}
+              {isEdibleSearch && (
+                <p className="error">Edible food found. Seach Failed.</p>
+              )}
               <div className="item-grid">
-        {items.map((item) => (
+                {!isEdibleSearch && displayItems.length === 0 && (
+                  <div className="no-selection" style={{ gridColumn: '1 / -1' }}>
+                    <h2>No matching items</h2>
+                    <p>Try a different search term</p>
+                  </div>
+                )}
+                {displayItems.map((item) => (
                   <div
                     key={item.id}
                     className={`item-card ${selectedItem?.id === item.id ? 'selected' : ''}`}
                     onClick={() => setSelectedItem(item)}
                   >
-                    <div className="item-emoji">{item.emoji}</div>
                     <div className="item-name">{item.name}</div>
                     <div className="item-category">{item.category}</div>
           <div className="item-calories">{formatCal(item.caloriesPerUnit)} cal</div>
@@ -116,7 +157,7 @@ const Calculator = () => {
                   <h2>Calculate Calories</h2>
                   <div className="selected-item-info">
                     <div className="selected-item-display">
-                      <span className="selected-emoji">{selectedItem.emoji}</span>
+                      
                       <div>
                         <div className="selected-name">{selectedItem.name}</div>
                         <div className="selected-category">{selectedItem.category}</div>
@@ -154,14 +195,14 @@ const Calculator = () => {
                     onClick={addToBill}
                     className="btn btn-primary calculate-btn"
                   >
-                    Add to Bill
+                    Add
                   </button>
 
                   <div className="bill-section">
                     {billItems.length === 0 ? (
                       <div className="no-selection">
                         <h2>No items added</h2>
-                        <p>Add items to build your calorie bill</p>
+                        <p>Add items to your list</p>
                       </div>
                     ) : (
                       <>
@@ -176,7 +217,6 @@ const Calculator = () => {
                           {billItems.map(item => (
                             <div key={item.id} className="bill-item-row">
                               <div className="bill-item-name">
-                                <span className="bill-emoji">{item.emoji}</span>
                                 {item.name}
                               </div>
                               <div className="bill-qty">{item.quantity}</div>
@@ -187,7 +227,7 @@ const Calculator = () => {
                           ))}
                         </div>
                         <div className="bill-actions">
-                          <button className="btn clear-btn" onClick={clearBill}>Clear Bill</button>
+                          <button className="btn clear-btn" onClick={clearBill}>Clear</button>
                         </div>
                         <div className="result-section">
                           <div className="result-display">

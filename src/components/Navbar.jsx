@@ -8,7 +8,7 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="nav-container">
         <Link to="/" className="nav-brand">
-          NutriTrack Pro
+          WhyChewThis
         </Link>
         
         <div className="nav-links">

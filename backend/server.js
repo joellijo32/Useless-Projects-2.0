@@ -1,4 +1,4 @@
-// Simple Express + SQLite backend for NutriTrack Pro
+// Simple Express + SQLite backend for WhyChewThis
 import express from 'express'
 import path from 'path'
 import fs from 'fs'

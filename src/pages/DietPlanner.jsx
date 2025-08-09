@@ -22,18 +22,25 @@ const DietPlanner = () => {
     if (!formData.goal || !formData.calories) return
     
     setIsGenerating(true)
-    setTimeout(() => {
-      const plan = generateDietPlan(formData)
+    setTimeout(async () => {
+      const plan = await generateDietPlan(formData)
       setDietPlan(plan)
       setIsGenerating(false)
     }, 2000)
+  }
+
+  const handleCreateAnother = () => {
+    if (isGenerating) return
+    // Clear current plan, then trigger a fresh generation
+    setDietPlan(null)
+    handleGeneratePlan()
   }
 
   return (
     <div className="diet-planner-page">
       <div className="page-header glass-card">
         <h1>Diet Plan Generator</h1>
-        <p>Create a personalized nutrition plan based on your goals and preferences</p>
+        <center><p>Create a personalized nutrition plan based on your goals and preferences</p></center>
       </div>
 
       <div className="planner-grid">
@@ -126,25 +133,6 @@ const DietPlanner = () => {
             <div className="plan-summary">
               <div className="plan-header">
                 <h3>Your {dietPlan.duration}-Day Plan</h3>
-                <div className="plan-stats">
-                  <span>{dietPlan.dailyCalories} cal/day</span>
-                  <span>{dietPlan.mealsPerDay} meals/day</span>
-                </div>
-              </div>
-              
-              <div className="macros-breakdown">
-                <div className="macro-item">
-                  <span className="macro-label">Protein</span>
-                  <span className="macro-value">{dietPlan.macros.protein}g</span>
-                </div>
-                <div className="macro-item">
-                  <span className="macro-label">Carbs</span>
-                  <span className="macro-value">{dietPlan.macros.carbs}g</span>
-                </div>
-                <div className="macro-item">
-                  <span className="macro-label">Fat</span>
-                  <span className="macro-value">{dietPlan.macros.fat}g</span>
-                </div>
               </div>
 
               <div className="sample-day">
@@ -156,6 +144,16 @@ const DietPlanner = () => {
                     <span className="meal-calories">{meal.calories} cal</span>
                   </div>
                 ))}
+              </div>
+
+              <div className="plan-actions" style={{ marginTop: '1rem' }}>
+                <button
+                  className="btn"
+                  onClick={handleCreateAnother}
+                  disabled={isGenerating}
+                >
+                  Create another plan
+                </button>
               </div>
             </div>
           )}

@@ -163,6 +163,7 @@ p {
 }
 
 .muted { color: var(--muted); }
+.error { color: #f87171; margin: 0.5rem 0 0.75rem; font-weight: 600; }
 
 /* Home Page */
 .home-page {
@@ -289,6 +290,10 @@ p {
   margin-bottom: 2rem;
   font-size: 1.75rem;
 }
+
+.search-row { margin-bottom: 1rem; }
+.search-input { background: var(--surface-2); border-color: var(--border); }
+.search-input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(96,165,250,0.12); }
 
 /* Grid Layouts */
 .item-grid {

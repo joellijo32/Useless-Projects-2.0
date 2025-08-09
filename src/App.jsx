@@ -5,6 +5,7 @@ import Home from './pages/Home'
 import Calculator from './pages/Calculator'
 import DietPlanner from './pages/DietPlanner'
 import Navbar from './components/Navbar'
+import Footer from './components/Footer'
 
 function App() {
   return (
@@ -25,6 +26,8 @@ function App() {
           <Route path="/calculator" element={<Calculator />} />
           <Route path="/diet-planner" element={<div className="container"><DietPlanner /></div>} />
         </Routes>
+
+  <Footer />
       </div>
     </Router>
   )

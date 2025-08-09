@@ -23,7 +23,7 @@ const CalorieCalculator = ({ item, onCaloriesCalculated, onShowDietPlan, onShowN
   return (
     <div className="glass-card">
       <h2>
-        Calculating Calories for {item.emoji} {item.name}
+        
       </h2>
       
       {/* Quantity Selector */}

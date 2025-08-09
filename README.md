@@ -79,7 +79,7 @@ https://drive.google.com/file/d/1eRDpAA_GI4bAy6ddYV8RVIQqWkrPuiXC/view?usp=shari
 
 The video shows the different functionalities of the project: Calorie Calculation, Diet Plan Generation.
 
-# Additional Demos
+
 
 
 ## Team Contributions

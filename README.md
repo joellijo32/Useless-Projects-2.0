@@ -42,7 +42,7 @@ For Software:
 2. Start the backend: 
         cd backend </p>
         npm install </p>
-        node server.js
+        node server.js </p>
 3. Start the frontend:
     npm install </p>
     npm run dev </p>

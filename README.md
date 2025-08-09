@@ -39,20 +39,35 @@ For Software:
 [commands]
 
 # Run
-[commands]
+1. Install Node.js
+2. Start the backend: 
+        cd backend
+        npm install
+        npm start
+3. Start the frontend:
+    npm install
+    npm run dev
+
+
+
 
 ### Project Documentation
 For Software:
 
 # Screenshots (Add at least 3)
-![Screenshot1](Add screenshot 1 here with proper name)
-*Add caption explaining what this shows*
+<img src="C:\Users\Naveen S\OneDrive\Pictures\Screenshots\Screenshot 2025-08-09 161335.png">
 
-![Screenshot2](Add screenshot 2 here with proper name)
-*Add caption explaining what this shows*
+<img src="C:\Users\Naveen S\OneDrive\Pictures\Screenshots\Screenshot 2025-08-09 161401.png">
 
-![Screenshot3](Add screenshot 3 here with proper name)
-*Add caption explaining what this shows*
+Screenshots of home page
+
+<img src="C:\Users\Naveen S\OneDrive\Pictures\Screenshots\Screenshot 2025-08-09 161434.png">
+
+Calorie calculator webpage
+
+<img src="C:\Users\Naveen S\OneDrive\Pictures\Screenshots\Screenshot 2025-08-09 161458.png">
+
+Diet planner webpage
 
 # Diagrams
 ![Workflow](Add your workflow/architecture diagram here)
@@ -79,8 +94,9 @@ For Hardware:
 
 ### Project Demo
 # Video
-[Add your demo video link here]
-*Explain what the video demonstrates*
+https://drive.google.com/file/d/1eRDpAA_GI4bAy6ddYV8RVIQqWkrPuiXC/view?usp=sharing
+
+The video shows the different functionalities of the project: Calorie Calculation, Diet Plan Generation.
 
 # Additional Demos
 [Add any extra demo materials/links]

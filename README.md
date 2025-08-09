@@ -4,7 +4,7 @@
 # WhyChewThis 🎯
 
 ## Hosted Link
-https://why-chew-this-useless-pro-git-87446c-joel-lijo-mathews-projects.vercel.app?_vercel_share=RjX5suGJFzdrT59AUbZOr3ayYeArRAk5
+[Click Here](https://why-chew-this-useless-projects-2-0.vercel.app/)
 
 ## Basic Details
 ### Team Name: VoidWare

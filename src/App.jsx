@@ -1,34 +1,64 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import Header from './components/Header'
+import ItemSelector from './components/ItemSelector'
+import CalorieCalculator from './components/CalorieCalculator'
+import DietPlan from './components/DietPlan'
+import NutritionalFacts from './components/NutritionalFacts'
+import Reviews from './components/Reviews'
+import Footer from './components/Footer'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [selectedItem, setSelectedItem] = useState(null)
+  const [calculatedCalories, setCalculatedCalories] = useState(0)
+  const [showDietPlan, setShowDietPlan] = useState(false)
+  const [showNutritionFacts, setShowNutritionFacts] = useState(false)
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="app">
+      {/* Animated Background Elements */}
+      <div className="background-animation">
+        <div className="blob blob-1"></div>
+        <div className="blob blob-2"></div>
+        <div className="blob blob-3"></div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+
+      <div className="container">
+        <Header />
+        
+        <ItemSelector 
+          onItemSelect={setSelectedItem} 
+          selectedItem={selectedItem}
+        />
+        
+        {selectedItem && (
+          <CalorieCalculator 
+            item={selectedItem}
+            onCaloriesCalculated={setCalculatedCalories}
+            onShowDietPlan={() => setShowDietPlan(true)}
+            onShowNutritionFacts={() => setShowNutritionFacts(true)}
+          />
+        )}
+        
+        {showDietPlan && calculatedCalories > 0 && (
+          <DietPlan 
+            item={selectedItem}
+            calories={calculatedCalories}
+            onClose={() => setShowDietPlan(false)}
+          />
+        )}
+        
+        {showNutritionFacts && selectedItem && (
+          <NutritionalFacts 
+            item={selectedItem}
+            onClose={() => setShowNutritionFacts(false)}
+          />
+        )}
+        
+        <Reviews />
+        <Footer />
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </div>
   )
 }
 

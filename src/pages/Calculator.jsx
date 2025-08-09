@@ -11,6 +11,16 @@ const Calculator = () => {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
 
+  // Format calories to 2–3 decimal places with grouping
+  const formatCal = (value) => {
+    const num = Number(value) || 0
+    return num.toLocaleString(undefined, {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 3,
+      useGrouping: true,
+    })
+  }
+
   useEffect(() => {
     let cancelled = false
     const fetchItems = async () => {
@@ -85,7 +95,7 @@ const Calculator = () => {
               {loading && <p className="muted">Loading items…</p>}
               {!loading && error && <p className="muted">{error}</p>}
               <div className="item-grid">
-                {items.map((item) => (
+        {items.map((item) => (
                   <div
                     key={item.id}
                     className={`item-card ${selectedItem?.id === item.id ? 'selected' : ''}`}
@@ -94,7 +104,7 @@ const Calculator = () => {
                     <div className="item-emoji">{item.emoji}</div>
                     <div className="item-name">{item.name}</div>
                     <div className="item-category">{item.category}</div>
-                    <div className="item-calories">{item.caloriesPerUnit} cal</div>
+          <div className="item-calories">{formatCal(item.caloriesPerUnit)} cal</div>
                   </div>
                 ))}
               </div>
@@ -170,8 +180,8 @@ const Calculator = () => {
                                 {item.name}
                               </div>
                               <div className="bill-qty">{item.quantity}</div>
-                              <div className="bill-unit">{item.caloriesPerUnit} cal</div>
-                              <div className="bill-subtotal">{(item.caloriesPerUnit * item.quantity).toLocaleString()} cal</div>
+                              <div className="bill-unit">{formatCal(item.caloriesPerUnit)} cal</div>
+                              <div className="bill-subtotal">{formatCal(item.caloriesPerUnit * item.quantity)} cal</div>
                               <button className="btn remove-btn" onClick={() => removeFromBill(item.id)}>Remove</button>
                             </div>
                           ))}
@@ -181,7 +191,7 @@ const Calculator = () => {
                         </div>
                         <div className="result-section">
                           <div className="result-display">
-                            <div className="result-number">{billTotal.toLocaleString()}</div>
+                            <div className="result-number">{formatCal(billTotal)}</div>
                             <div className="result-label">Total Calories</div>
                           </div>
                         </div>

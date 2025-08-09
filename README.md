@@ -1,8 +1,10 @@
 <img width="3188" height="1202" alt="frame (3)" src="https://github.com/user-attachments/assets/517ad8e9-ad22-457d-9538-a9e62d137cd7" />
 
 
-# [Project Name] 🎯
+# WhyChewThis 🎯
 
+## Hosted Link
+https://why-chew-this-useless-pro-git-87446c-joel-lijo-mathews-projects.vercel.app?_vercel_share=RjX5suGJFzdrT59AUbZOr3ayYeArRAk5
 
 ## Basic Details
 ### Team Name: VoidWare
@@ -35,10 +37,8 @@ For Software:
 
 ### Implementation
 For Software:
-# Installation
-[commands]
 
-# Run
+# Installation & Run
 1. Install Node.js
 2. Start the backend: 
         cd backend
@@ -69,28 +69,6 @@ Calorie calculator webpage
 
 Diet planner webpage
 
-# Diagrams
-![Workflow](Add your workflow/architecture diagram here)
-*Add caption explaining your workflow*
-
-For Hardware:
-
-# Schematic & Circuit
-![Circuit](Add your circuit diagram here)
-*Add caption explaining connections*
-
-![Schematic](Add your schematic diagram here)
-*Add caption explaining the schematic*
-
-# Build Photos
-![Components](Add photo of your components here)
-*List out all components shown*
-
-![Build](Add photos of build process here)
-*Explain the build steps*
-
-![Final](Add photo of final product here)
-*Explain the final build*
 
 ### Project Demo
 # Video
@@ -99,7 +77,7 @@ https://drive.google.com/file/d/1eRDpAA_GI4bAy6ddYV8RVIQqWkrPuiXC/view?usp=shari
 The video shows the different functionalities of the project: Calorie Calculation, Diet Plan Generation.
 
 # Additional Demos
-[Add any extra demo materials/links]
+
 
 ## Team Contributions
 - Joel Lijo: Design, Deployment 

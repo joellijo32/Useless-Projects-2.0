@@ -40,12 +40,12 @@ For Software:
 # Installation & Run
 1. Install Node.js
 2. Start the backend: 
-        cd backend
-        npm install
-        npm start
+        cd backend </p>
+        npm install </p>
+        node server.js
 3. Start the frontend:
-    npm install
-    npm run dev
+    npm install </p>
+    npm run dev </p>
 
 
 

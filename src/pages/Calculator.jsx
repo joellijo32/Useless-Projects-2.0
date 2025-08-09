@@ -1,12 +1,40 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { inedibleItems } from '../data/inedibleItems'
+import { inedibleItems as localItems } from '../data/inedibleItems'
 
 const Calculator = () => {
   const [selectedItem, setSelectedItem] = useState(null)
   const [quantity, setQuantity] = useState(1)
   const [totalCalories, setTotalCalories] = useState(0)
   const [billItems, setBillItems] = useState([])
+  const [items, setItems] = useState(localItems)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
+
+  useEffect(() => {
+    let cancelled = false
+    const fetchItems = async () => {
+      setLoading(true)
+      setError('')
+      try {
+        const res = await fetch('/api/items')
+        if (!res.ok) throw new Error(`HTTP ${res.status}`)
+        const data = await res.json()
+        if (!cancelled && Array.isArray(data) && data.length) {
+          setItems(data)
+        }
+      } catch (e) {
+        if (!cancelled) {
+          setError('Using local dataset (backend unavailable).')
+          setItems(localItems)
+        }
+      } finally {
+        if (!cancelled) setLoading(false)
+      }
+    }
+    fetchItems()
+    return () => { cancelled = true }
+  }, [])
 
   const addToBill = () => {
     if (!selectedItem || quantity < 1) return
@@ -54,8 +82,10 @@ const Calculator = () => {
           <div className="calculator-grid">
             <div className="item-selection-panel">
               <h2>Select Item</h2>
+              {loading && <p className="muted">Loading items…</p>}
+              {!loading && error && <p className="muted">{error}</p>}
               <div className="item-grid">
-                {inedibleItems.map((item) => (
+                {items.map((item) => (
                   <div
                     key={item.id}
                     className={`item-card ${selectedItem?.id === item.id ? 'selected' : ''}`}

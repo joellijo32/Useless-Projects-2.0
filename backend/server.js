@@ -12,9 +12,7 @@ const __dirname = path.dirname(__filename)
 const app = express()
 // Allow requests from your Vercel site
 app.use(cors({
-  origin: 'https://why-chew-this-useless-projects-2-0.vercel.app',
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  credentials: true
+  origin: "*"
 }))
 app.use(express.json())
 

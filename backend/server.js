@@ -4,11 +4,18 @@ import path from 'path'
 import fs from 'fs'
 import { fileURLToPath } from 'url'
 import Database from 'better-sqlite3'
+import cors from 'cors'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
 const app = express()
+// Allow requests from your Vercel site
+app.use(cors({
+  origin: 'https://why-chew-this-useless-projects-2-0.vercel.app',
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true
+}))
 app.use(express.json())
 
 // Choose DB file: prefer provided full dataset if available

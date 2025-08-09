@@ -35,8 +35,7 @@ For Software:
 - SQLite3, Tailwind CSS, Cors, React Router DOM, React icons
 - VSCode, Google colab, Vercel, Render
 
-### Implementation
-For Software:
+
 
 # Installation & Run
 1. Install Node.js

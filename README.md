@@ -33,17 +33,17 @@ For Software:
 - JavaScript, React
 - Vite+React, node+express 
 - SQLite3, Tailwind CSS, Cors, React Router DOM, React icons
-- VSCode, Google colab, Vercel, Render
+- VSCode, Google colab, Vercel (for frontend) , Render (for backend)
 
 
 
 # Installation & Run
 1. Install Node.js
-2. Start the backend: 
+2. Open Terminal and start the backend: 
         cd backend </p>
         npm install </p>
         node server.js </p>
-3. Start the frontend:
+3. Open a new terminal (in the project root directory) and start the frontend:
     npm install </p>
     npm run dev </p>
 
@@ -51,7 +51,7 @@ For Software:
 
 
 ### Project Documentation
-For Software:
+
 
 # Screenshots (Add at least 3)
 
@@ -83,7 +83,7 @@ The video shows the different functionalities of the project: Calorie Calculatio
 
 
 ## Team Contributions
-- Joel Lijo: Design, Deployment 
+- Joel Lijo Mathew: Design, Deployment 
 - Naveen S: Idea formation, Database, Documentation
 ---
 Made with ❤️ at TinkerHub Useless Projects 

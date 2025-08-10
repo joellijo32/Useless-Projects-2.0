@@ -11,8 +11,8 @@
 
 
 ### Team Members
-- Team Lead: Naveen S - College of Engineering, Trivandrum
-- Member 2: Joel Lijo Mathew- College of Engineering, Trivandrum
+- Team Lead: [Naveen S](https://github.com/NaveenS-cool) - College of Engineering, Trivandrum
+- Member 2: [Joel Lijo Mathew](https://github.com/joellijo32) - College of Engineering, Trivandrum
 
 ### Project Description
 People often wonder about the calories in food… but what about the things we should NEVER eat?
@@ -83,8 +83,8 @@ The video shows the different functionalities of the project: Calorie Calculatio
 
 
 ## Team Contributions
-- Joel Lijo Mathew: Design, Deployment 
-- Naveen S: Idea formation, Database, Documentation
+- [Joel Lijo Mathew](https://github.com/joellijo32): Design, Deployment 
+- [Naveen S](https://github.com/NaveenS-cool): Idea formation, Database, Documentation
 ---
 Made with ❤️ at TinkerHub Useless Projects 
 
